@@ -32,7 +32,7 @@ function calcular(){
           let qtdesuplemento = Number(document.getElementById("qtdesuplemento").value)
           if (qtdesuplemento >= metasuplemento){ pontos = pontos + 5000
             if (qtdesuplemento > metasuplemento){
-              pontos = pontos + (qtdesuplemento - metasuplemento) * (5000/metasuplemento)
+              pontos = pontos + (qtdesuplemento - metasuplemento) * (5000/metasuplemento) 
             }
           }
 
