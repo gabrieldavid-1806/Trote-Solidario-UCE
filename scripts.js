@@ -1,4 +1,4 @@
-         function calcular(){
+function calcular(){
             //pontuação dos itens avulsos
           //recupera a quantidade de arroz
           let qtdearroz= Number(document.getElementById("qtdearroz").value)
@@ -19,13 +19,30 @@
           else if (cor == "roxo"){metaKit = 42}
           else if (cor == "preto"){metaKit = 60}
           else if (cor == "cinza"){metaKit = 51}
-           let qtdekits =Number(document.getElementById("qtdekits").value) 
-           if(qtdekits >= metaKit){pontos = pontos + 5000
+           let qtdekits = Number(document.getElementById("qtdekits").value) 
+           if(qtdekits >= metaKit){pontos = pontos + 5000 
             if (qtdekits > metaKit){pontos = pontos +(qtdekits - metaKit) * (5000/metaKit)}
            }
            else { pontos = pontos + (qtdekits)* (5000/metaKit)}
-          document.getElementById("result").innerHTML= "Pontuação : " + pontos + " pontos<br>" + 
-            "A meta de kits de alimentação para o seu curso é : " + metaKit + " Kits"
+           let metasuplemento
+           if (metaKit % 2 == 0){metasuplemento = metaKit/2}
+           else{
+            ( metasuplemento = metaKit/2  + 0.5)
+          }
+          let qtdesuplemento = Number(document.getElementById("qtdesuplemento").value)
+          if (qtdesuplemento >= metasuplemento){ pontos = pontos + 5000
+            if (qtdesuplemento > metasuplemento){
+              pontos = pontos + (qtdesuplemento - metasuplemento) * (5000/metasuplemento)
+            }
+          }
+
+          let metaleite = metaKit
+          
+          let metasangue = metasuplemento
+           document.getElementById("result").innerHTML= "Pontuação : " + pontos.toFixed(2) + " pontos<br>" + 
+            "A meta de kits de alimentação para o seu curso é : " + metaKit + " Kits<br>"
+            + "A meta de doação de Suplementos é : " + metasuplemento + " Suplementos<br>" + 
+            "A meta de doação de Leite é : " + metaleite + " Leites<br>" + 
+            "A meta de doação de sangue é : " + metasangue+ " Bolsas de Sangue."
+
         }
-      
-   
